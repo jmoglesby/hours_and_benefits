@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sick Hours Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sick hours entry</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sick_hours_logs.each do |sick_hours_log| %>
+      <tr>
+        <td><%= sick_hours_log.sick_hours_entry %></td>
+        <td><%= sick_hours_log.user %></td>
+        <td><%= link_to 'Show', sick_hours_log %></td>
+        <td><%= link_to 'Edit', edit_sick_hours_log_path(sick_hours_log) %></td>
+        <td><%= link_to 'Destroy', sick_hours_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sick Hours Log', new_sick_hours_log_path %>

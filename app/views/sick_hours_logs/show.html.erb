@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sick hours entry:</strong>
+  <%= @sick_hours_log.sick_hours_entry %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sick_hours_log.user %>
+</p>
+
+<%= link_to 'Edit', edit_sick_hours_log_path(@sick_hours_log) %> |
+<%= link_to 'Back', sick_hours_logs_path %>

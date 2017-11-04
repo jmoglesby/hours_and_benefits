@@ -1,0 +1,2 @@
+module HoursLogsHelper
+end
