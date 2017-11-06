@@ -1,0 +1,2 @@
+class SickHoursEvent < ApplicationRecord
+end

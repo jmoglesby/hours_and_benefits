@@ -1,0 +1,2 @@
+class VacationHoursEvent < ApplicationRecord
+end

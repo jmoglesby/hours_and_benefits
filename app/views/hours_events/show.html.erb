@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hours worked:</strong>
+  <%= @hours_event.hours_worked %>
+</p>
+
+<p>
+  <strong>Hours worked date:</strong>
+  <%= @hours_event.hours_worked_date %>
+</p>
+
+<%= link_to 'Edit', edit_hours_event_path(@hours_event) %> |
+<%= link_to 'Back', hours_events_path %>

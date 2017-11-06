@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sick hours used:</strong>
+  <%= @sick_hours_event.sick_hours_used %>
+</p>
+
+<p>
+  <strong>Sick hours gained:</strong>
+  <%= @sick_hours_event.sick_hours_gained %>
+</p>
+
+<p>
+  <strong>Sick hours adj date:</strong>
+  <%= @sick_hours_event.sick_hours_adj_date %>
+</p>
+
+<%= link_to 'Edit', edit_sick_hours_event_path(@sick_hours_event) %> |
+<%= link_to 'Back', sick_hours_events_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vacation_hours_used: 9.99
+  vacation_hours_gained: 9.99
+  vacation_hours_adj_date: 2017-11-06
+
+two:
+  vacation_hours_used: 9.99
+  vacation_hours_gained: 9.99
+  vacation_hours_adj_date: 2017-11-06

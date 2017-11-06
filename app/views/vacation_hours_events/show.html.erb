@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vacation hours used:</strong>
+  <%= @vacation_hours_event.vacation_hours_used %>
+</p>
+
+<p>
+  <strong>Vacation hours gained:</strong>
+  <%= @vacation_hours_event.vacation_hours_gained %>
+</p>
+
+<p>
+  <strong>Vacation hours adj date:</strong>
+  <%= @vacation_hours_event.vacation_hours_adj_date %>
+</p>
+
+<%= link_to 'Edit', edit_vacation_hours_event_path(@vacation_hours_event) %> |
+<%= link_to 'Back', vacation_hours_events_path %>

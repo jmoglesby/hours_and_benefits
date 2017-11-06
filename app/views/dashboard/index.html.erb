@@ -1,8 +1,66 @@
-<header>
-  <h1>Welcome <%= current_user.email %></h1>
-  <h2>We're using Rails <%= Rails.version %></h2>
-</header> 
-<section>
-  <p>Future home of Shine's Dashboard</p>
-</section>
-<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+<div class="jumbotron">
+  <h1 class="h1">
+    Hours & Benefits
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm float-right" %>
+  </h1>
+  <p class="font-italic">
+    <%= current_user.email %>
+  </p>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <div class="card text-center">
+        <h3 class="card-header">
+          Hours Worked
+        </h3>
+        <div class="card-body">
+          <p class="text-left">
+            Week:
+            <span class="btn btn-outline-secondary btn-sm">
+              40
+            </span>
+          </p>
+          <p class="text-left">
+            Yesterday:
+            <span class="btn btn-outline-secondary btn-sm">
+              8
+            </span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Add Hours", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card text-center">
+        <h3 class="card-header">
+          Sick Hours
+        </h3>
+        <div class="card-body">
+          <p>Available:</p>
+          <p>Used This Year:</p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Use", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card text-center">
+        <h3 class="card-header">
+          Vacation Hours
+        </h3>
+        <div class="card-body">
+          <p>Available:</p>
+          <p>Used This Year:</p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Use", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

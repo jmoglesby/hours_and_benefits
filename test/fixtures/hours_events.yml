@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hours_worked: 9.99
+  hours_worked_date: 2017-11-06
+
+two:
+  hours_worked: 9.99
+  hours_worked_date: 2017-11-06

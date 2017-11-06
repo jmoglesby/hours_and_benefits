@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vacation Hours Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vacation hours used</th>
+      <th>Vacation hours gained</th>
+      <th>Vacation hours adj date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vacation_hours_events.each do |vacation_hours_event| %>
+      <tr>
+        <td><%= vacation_hours_event.vacation_hours_used %></td>
+        <td><%= vacation_hours_event.vacation_hours_gained %></td>
+        <td><%= vacation_hours_event.vacation_hours_adj_date %></td>
+        <td><%= link_to 'Show', vacation_hours_event %></td>
+        <td><%= link_to 'Edit', edit_vacation_hours_event_path(vacation_hours_event) %></td>
+        <td><%= link_to 'Destroy', vacation_hours_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vacation Hours Event', new_vacation_hours_event_path %>

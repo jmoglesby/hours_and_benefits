@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :hours_logs
-  resources :sick_hours_logs
-  resources :vacation_hours_logs
+  resources :vacation_hours_events
+  resources :sick_hours_events
+  resources :hours_events
   devise_for :users
-  get 'dashboard/index'
 
-  root to: "dashboard#index"
+  root to: "dashboard#index", as: 'dashboard_index'
 end
