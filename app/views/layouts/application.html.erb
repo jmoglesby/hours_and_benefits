@@ -11,7 +11,7 @@
 
   </head>
 
-  <body class=container>
+  <body class="container">
     <% if notice.present? %>
       <aside class="alert alert-info">
         <%= notice %>
@@ -24,4 +24,13 @@
     <% end %>
     <%= yield %>
   </body>
+
+  <div class="container">
+    <br>
+    <br>
+  </div>
+
+  <footer>
+    <%= link_to 'Home', dashboard_index_path, class: "btn btn-secondary btn-block" %>
+  </footer>
 </html>

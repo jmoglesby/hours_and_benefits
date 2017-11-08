@@ -1,31 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Vacation Hours Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Vacation hours used</th>
-      <th>Vacation hours gained</th>
-      <th>Vacation hours adj date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vacation_hours_events.each do |vacation_hours_event| %>
+<div class="jumbotron">
+    <h1>Vacation Hours Usage</h1>
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= vacation_hours_event.vacation_hours_used %></td>
-        <td><%= vacation_hours_event.vacation_hours_gained %></td>
-        <td><%= vacation_hours_event.vacation_hours_adj_date %></td>
-        <td><%= link_to 'Show', vacation_hours_event %></td>
-        <td><%= link_to 'Edit', edit_vacation_hours_event_path(vacation_hours_event) %></td>
-        <td><%= link_to 'Destroy', vacation_hours_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Date</th>
+        <th>Hours Used</th>
+        <th>Hours Gained</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Vacation Hours Event', new_vacation_hours_event_path %>
+    </thead>
+  
+    <tbody>
+      <% @vacation_hours_events.order(vacation_hours_adj_date: :desc).each do |vacation_hours_event| %>
+        <tr>
+          <td><%= vacation_hours_event.vacation_hours_adj_date.strftime("%m/%d/%Y") %></td>
+          <td><%= vacation_hours_event.vacation_hours_used %></td>
+          <td><%= vacation_hours_event.vacation_hours_gained %></td>
+          <td>
+            <%= link_to 'Edit', edit_vacation_hours_event_path(vacation_hours_event), class: "btn btn-success btn-sm" %>
+          </td>
+          <td>
+            <%= link_to 'Delete', vacation_hours_event,
+                method: :delete, data: { confirm: 'Are you sure?' },
+                class: "btn btn-danger btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  
+  <div class="btn-group">
+    <%= link_to 'New Hours Event', new_vacation_hours_event_path, class: "btn btn-primary" %>
+    <%= link_to 'Manually Add Hours', vacation_hours_events_gain_path, class: "btn btn-warning" %>
+  </div>

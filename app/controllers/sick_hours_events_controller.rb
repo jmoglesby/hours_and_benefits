@@ -17,6 +17,10 @@ class SickHoursEventsController < ApplicationController
     @sick_hours_event = SickHoursEvent.new
   end
 
+  def gain
+    @sick_hours_event = SickHoursEvent.new
+  end
+
   # GET /sick_hours_events/1/edit
   def edit
   end
@@ -28,7 +32,7 @@ class SickHoursEventsController < ApplicationController
 
     respond_to do |format|
       if @sick_hours_event.save
-        format.html { redirect_to @sick_hours_event, notice: 'Sick hours event was successfully created.' }
+        format.html { redirect_to sick_hours_events_path, notice: 'Sick hours event was successfully created.' }
         format.json { render :show, status: :created, location: @sick_hours_event }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class SickHoursEventsController < ApplicationController
   def update
     respond_to do |format|
       if @sick_hours_event.update(sick_hours_event_params)
-        format.html { redirect_to @sick_hours_event, notice: 'Sick hours event was successfully updated.' }
+        format.html { redirect_to sick_hours_events_path, notice: 'Sick hours event was successfully updated.' }
         format.json { render :show, status: :ok, location: @sick_hours_event }
       else
         format.html { render :edit }

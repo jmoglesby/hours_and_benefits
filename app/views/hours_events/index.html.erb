@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1>Hours Worked</h1>
+</div>
 
-<h1>Hours Events</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Hours worked</th>
-      <th>Hours worked date</th>
-      <th colspan="3"></th>
+      <th>Date</th>
+      <th>Hours</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @hours_events.each do |hours_event| %>
+    <% @hours_events.order(hours_worked_date: :desc).each do |hours_event| %>
       <tr>
+        <td><%= hours_event.hours_worked_date.strftime("%m/%d/%Y") %></td>
         <td><%= hours_event.hours_worked %></td>
-        <td><%= hours_event.hours_worked_date %></td>
-        <td><%= link_to 'Show', hours_event %></td>
-        <td><%= link_to 'Edit', edit_hours_event_path(hours_event) %></td>
-        <td><%= link_to 'Destroy', hours_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Edit', edit_hours_event_path(hours_event), class: "btn btn-success btn-sm" %>
+        </td>
+        <td>
+          <%= link_to 'Delete', hours_event,
+              method: :delete, data: { confirm: 'Are you sure?' },
+              class: "btn btn-danger btn-sm" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Hours Event', new_hours_event_path %>
+<%= link_to 'New Hours Event', new_hours_event_path, class: "btn btn-primary" %>

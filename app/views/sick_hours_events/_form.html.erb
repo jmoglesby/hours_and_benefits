@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :sick_hours_used %>
-    <%= form.text_field :sick_hours_used, id: :sick_hours_event_sick_hours_used %>
+  <div class="form-group form-group-sm">
+      <%= form.number_field :sick_hours_used,
+          id: :sick_hours_event_sick_hours_used,
+          class: "form-control form-control-sm",
+          placeholder: "Hours Used" %>
+
+      <%= form.hidden_field :sick_hours_gained, id: :sick_hours_event_sick_hours_gained, value: 0 %>
+
+      <%= form.date_field :sick_hours_adj_date,
+          id: :sick_hours_event_sick_hours_adj_date,
+          class: "form-control form-control-sm" %>
   </div>
 
-  <div class="field">
-    <%= form.label :sick_hours_gained %>
-    <%= form.text_field :sick_hours_gained, id: :sick_hours_event_sick_hours_gained %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sick_hours_adj_date %>
-    <%= form.date_select :sick_hours_adj_date, id: :sick_hours_event_sick_hours_adj_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="btn-group">
+    <%= form.submit "Use Sick Hours", class: "btn btn-primary btn-sm" %>
+    <%= link_to "Cancel", sick_hours_events_path, class: "btn btn-danger btn-sm" %>
   </div>
 <% end %>

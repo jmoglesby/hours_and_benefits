@@ -1,0 +1,32 @@
+<%= form_with(model: @vacation_hours_event, local: true) do |form| %>
+
+<% if @vacation_hours_event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@vacation_hours_event.errors.count, "error") %> prohibited this vacation_hours_event from being saved:</h2>
+
+    <ul>
+    <% @vacation_hours_event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="form-group form-group-sm">
+    <%= form.number_field :vacation_hours_gained,
+        id: :vacation_hours_event_vacation_hours_gained,
+        class: "form-control form-control-sm",
+        placeholder: "Hours Gained" %>
+
+    <%= form.hidden_field :vacation_hours_used, id: :vacation_hours_event_vacation_hours_used, value: 0 %>
+
+    <%= form.date_field :vacation_hours_adj_date,
+        id: :vacation_hours_event_vacation_hours_adj_date,
+        class: "form-control form-control-sm" %>
+</div>
+
+<div class="btn-group">
+  <%= form.submit "Add Vacation Hours", class: "btn btn-primary btn-sm" %>
+  <%= link_to "Cancel", vacation_hours_events_path, class: "btn btn-danger btn-sm" %>
+</div>
+<% end %>

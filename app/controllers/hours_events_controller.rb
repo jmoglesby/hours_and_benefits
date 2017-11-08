@@ -28,7 +28,7 @@ class HoursEventsController < ApplicationController
 
     respond_to do |format|
       if @hours_event.save
-        format.html { redirect_to @hours_event, notice: 'Hours event was successfully created.' }
+        format.html { redirect_to hours_events_path, notice: 'Hours event was successfully created.' }
         format.json { render :show, status: :created, location: @hours_event }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class HoursEventsController < ApplicationController
   def update
     respond_to do |format|
       if @hours_event.update(hours_event_params)
-        format.html { redirect_to @hours_event, notice: 'Hours event was successfully updated.' }
+        format.html { redirect_to hours_events_path, notice: 'Hours event was successfully updated.' }
         format.json { render :show, status: :ok, location: @hours_event }
       else
         format.html { render :edit }

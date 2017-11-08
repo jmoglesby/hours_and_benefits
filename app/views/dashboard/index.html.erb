@@ -13,52 +13,72 @@
     <div class="col-md">
       <div class="card text-center">
         <h3 class="card-header">
-          Hours Worked
+          <%= link_to "Hours Worked", hours_events_path %>
         </h3>
         <div class="card-body">
-          <p class="text-left">
+          <p>
             Week:
             <span class="btn btn-outline-secondary btn-sm">
-              40
+              <%= @hours_this_week %>
             </span>
           </p>
-          <p class="text-left">
+          <p>
             Yesterday:
             <span class="btn btn-outline-secondary btn-sm">
-              8
+              <%= @hours_yesterday %>
             </span>
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Add Hours", class: "btn btn-primary" %>
+          <%= link_to "Add Hours", new_hours_event_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>
     <div class="col-md">
       <div class="card text-center">
         <h3 class="card-header">
-          Sick Hours
+          <%= link_to "Sick Hours", sick_hours_events_path %>
         </h3>
         <div class="card-body">
-          <p>Available:</p>
-          <p>Used This Year:</p>
+          <p>
+            Available:
+            <span class="btn btn-outline-secondary btn-sm">
+              <%= @available_sick_hours %>
+            </span>
+          </p>
+          <p>
+            Used This Year:
+            <span class="btn btn-outline-secondary btn-sm">
+              <%= @sick_hours_used_this_year %>
+            </span>
+          </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use", class: "btn btn-primary" %>
+          <%= link_to "Use Hours", new_sick_hours_event_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>
     <div class="col-md">
       <div class="card text-center">
         <h3 class="card-header">
-          Vacation Hours
+          <%= link_to "Vacation Hours", vacation_hours_events_path %>
         </h3>
         <div class="card-body">
-          <p>Available:</p>
-          <p>Used This Year:</p>
+          <p>
+            Available:
+            <span class="btn btn-outline-secondary btn-sm">
+              <%= @available_vacation_hours %>
+            </span>
+          </p>
+          <p>
+            Used This Year:
+            <span class="btn btn-outline-secondary btn-sm">
+              <%= @vacation_hours_used_this_year %>
+            </span>
+          </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use", class: "btn btn-primary" %>
+          <%= link_to "Use Hours", new_vacation_hours_event_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

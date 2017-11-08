@@ -17,6 +17,10 @@ class VacationHoursEventsController < ApplicationController
     @vacation_hours_event = VacationHoursEvent.new
   end
 
+  def gain
+    @vacation_hours_event = VacationHoursEvent.new
+  end
+
   # GET /vacation_hours_events/1/edit
   def edit
   end
@@ -28,7 +32,7 @@ class VacationHoursEventsController < ApplicationController
 
     respond_to do |format|
       if @vacation_hours_event.save
-        format.html { redirect_to @vacation_hours_event, notice: 'Vacation hours event was successfully created.' }
+        format.html { redirect_to vacation_hours_events_path, notice: 'Vacation hours event was successfully created.' }
         format.json { render :show, status: :created, location: @vacation_hours_event }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class VacationHoursEventsController < ApplicationController
   def update
     respond_to do |format|
       if @vacation_hours_event.update(vacation_hours_event_params)
-        format.html { redirect_to @vacation_hours_event, notice: 'Vacation hours event was successfully updated.' }
+        format.html { redirect_to vacation_hours_events_path, notice: 'Vacation hours event was successfully updated.' }
         format.json { render :show, status: :ok, location: @vacation_hours_event }
       else
         format.html { render :edit }
