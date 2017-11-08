@@ -13,6 +13,8 @@ class DashboardController < ApplicationController
     @available_vacation_hours = @vacation_hours_events.sum(:vacation_hours_gained) - @vacation_hours_events.sum(:vacation_hours_used)
     @vacation_hours_events_this_year = @vacation_hours_events.this_year
     @vacation_hours_used_this_year = @vacation_hours_events_this_year.sum(:vacation_hours_used)
+
+    
   end
 end
 
