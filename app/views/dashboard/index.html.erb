@@ -1,7 +1,7 @@
 <div class="jumbotron">
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-lg float-right" %>
   <h1 class="h1">
     Hours & Benefits
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm float-right" %>
   </h1>
   <p class="font-italic">
     <%= current_user.email %>
@@ -11,74 +11,74 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-4">
-      <div class="card text-center">
-        <h3 class="card-header">
+      <div class="card text-center mb-4">
+        <h1 class="card-header">
           <%= link_to "Hours Worked", hours_events_path %>
-        </h3>
+        </h1>
         <div class="card-body">
-          <p>
+          <p class="h2">
             Week:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @hours_this_week %>
             </span>
           </p>
-          <p>
+          <p class="h2">
             Yesterday:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @hours_yesterday %>
             </span>
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Add Hours", new_hours_event_path, class: "btn btn-primary" %>
+          <%= link_to "Add Hours", new_hours_event_path, class: "btn btn-primary btn-lg" %>
         </div>
       </div>
     </div>
     <div class="col-lg-4">
-      <div class="card text-center">
-        <h3 class="card-header">
+      <div class="card text-center mb-4">
+        <h1 class="card-header">
           <%= link_to "Sick Hours", sick_hours_events_path %>
-        </h3>
+        </h1>
         <div class="card-body">
-          <p>
+          <p class="h2">
             Available:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @available_sick_hours %>
             </span>
           </p>
-          <p>
+          <p class="h2">
             Used This Year:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @sick_hours_used_this_year %>
             </span>
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use Hours", new_sick_hours_event_path, class: "btn btn-primary" %>
+          <%= link_to "Use Hours", new_sick_hours_event_path, class: "btn btn-primary btn-lg" %>
         </div>
       </div>
     </div>
     <div class="col-lg-4">
       <div class="card text-center">
-        <h3 class="card-header">
+        <h1 class="card-header">
           <%= link_to "Vacation Hours", vacation_hours_events_path %>
-        </h3>
+        </h1>
         <div class="card-body">
-          <p>
+          <p class="h2">
             Available:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @available_vacation_hours %>
             </span>
           </p>
-          <p>
+          <p class="h2">
             Used This Year:
-            <span class="btn btn-outline-secondary btn-sm">
+            <span class="btn btn-outline-secondary btn-lg">
               <%= @vacation_hours_used_this_year %>
             </span>
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use Hours", new_vacation_hours_event_path, class: "btn btn-primary" %>
+          <%= link_to "Use Hours", new_vacation_hours_event_path, class: "btn btn-primary btn-lg" %>
         </div>
       </div>
     </div>

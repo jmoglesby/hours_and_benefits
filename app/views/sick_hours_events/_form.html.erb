@@ -11,21 +11,25 @@
     </div>
   <% end %>
 
-  <div class="form-group form-group-sm">
-      <%= form.number_field :sick_hours_used,
-          id: :sick_hours_event_sick_hours_used,
-          class: "form-control form-control-sm",
-          placeholder: "Hours Used" %>
+  <div class="container-fluid">
+    <form class="form-inline">
+      <div class="form-group">
+          <%= form.number_field :sick_hours_used,
+              id: :sick_hours_event_sick_hours_used,
+              class: "form-control form-control-lg mb-3",
+              placeholder: "Hours Used" %>
 
-      <%= form.hidden_field :sick_hours_gained, id: :sick_hours_event_sick_hours_gained, value: 0 %>
+          <%= form.hidden_field :sick_hours_gained, id: :sick_hours_event_sick_hours_gained, value: 0 %>
 
-      <%= form.date_field :sick_hours_adj_date,
-          id: :sick_hours_event_sick_hours_adj_date,
-          class: "form-control form-control-sm" %>
-  </div>
+          <%= form.date_field :sick_hours_adj_date,
+              id: :sick_hours_event_sick_hours_adj_date,
+              class: "form-control form-control-lg" %>
+      </div>
+    </form>
 
-  <div class="btn-group">
-    <%= form.submit "Use Sick Hours", class: "btn btn-primary btn-sm" %>
-    <%= link_to "Cancel", sick_hours_events_path, class: "btn btn-danger btn-sm" %>
+    <div class="btn-group">
+      <%= form.submit "Use Sick Hours", class: "btn btn-primary btn-lg" %>
+      <%= link_to "Cancel", sick_hours_events_path, class: "btn btn-danger btn-lg" %>
+    </div>
   </div>
 <% end %>

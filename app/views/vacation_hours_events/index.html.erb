@@ -1,10 +1,15 @@
 <div class="jumbotron">
-    <h1>Vacation Hours Usage</h1>
+  <div class="btn-group float-right">
+    <%= link_to 'New Hours Event', new_vacation_hours_event_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to 'Manually Add Hours', vacation_hours_events_gain_path, class: "btn btn-warning btn-lg" %>
   </div>
+  <h1>Vacation</h1>
+</div>
   
+<div class="container-fluid">
   <table class="table table-striped">
     <thead>
-      <tr>
+      <tr class="h2">
         <th>Date</th>
         <th>Hours Used</th>
         <th>Hours Gained</th>
@@ -15,25 +20,18 @@
     <tbody>
       <% @vacation_hours_events.order(vacation_hours_adj_date: :desc).each do |vacation_hours_event| %>
         <tr>
-          <td><%= vacation_hours_event.vacation_hours_adj_date.strftime("%m/%d/%Y") %></td>
-          <td><%= vacation_hours_event.vacation_hours_used %></td>
-          <td><%= vacation_hours_event.vacation_hours_gained %></td>
+          <td class="h4"><%= vacation_hours_event.vacation_hours_adj_date.strftime("%m/%d/%Y") %></td>
+          <td class="h4"><%= vacation_hours_event.vacation_hours_used %></td>
+          <td class="h4"><%= vacation_hours_event.vacation_hours_gained %></td>
           <td>
-            <%= link_to 'Edit', edit_vacation_hours_event_path(vacation_hours_event), class: "btn btn-success btn-sm" %>
-          </td>
-          <td>
+            <%= link_to 'Edit', edit_vacation_hours_event_path(vacation_hours_event), class: "btn btn-success btn-lg" %>
             <%= link_to 'Delete', vacation_hours_event,
                 method: :delete, data: { confirm: 'Are you sure?' },
-                class: "btn btn-danger btn-sm" %>
+                class: "btn btn-danger btn-lg" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+</div>
   
-  <br>
-  
-  <div class="btn-group">
-    <%= link_to 'New Hours Event', new_vacation_hours_event_path, class: "btn btn-primary" %>
-    <%= link_to 'Manually Add Hours', vacation_hours_events_gain_path, class: "btn btn-warning" %>
-  </div>

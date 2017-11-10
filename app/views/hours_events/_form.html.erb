@@ -10,14 +10,19 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="container-fluid">
+    <form class="form-inline">
+      <div class="form-group">
+        <%= form.number_field :hours_worked, id: :hours_event_hours_worked, class: "form-control form-control-lg mb-3", placeholder: "Hours" %>
+        <%= form.date_field :hours_worked_date, id: :hours_event_hours_worked_date, class: "form-control form-control-lg" %>
+      </div>
+    </form>
 
-  <div class="form-group form-group-horizontal">
-    <%= form.number_field :hours_worked, id: :hours_event_hours_worked, class: "form-control form-control-sm", placeholder: "Hours" %>
-    <%= form.date_field :hours_worked_date, id: :hours_event_hours_worked_date, class: "form-control form-control-sm" %>
-  </div>
 
-  <div class="btn-group">
-    <%= form.submit "Add Hours", class: "btn btn-primary btn-sm" %>
-    <%= link_to "Cancel", hours_events_path, class: "btn btn-danger btn-sm" %>
-  </div>
+    <div class="btn-group">
+      <%= form.submit "Add Hours", class: "btn btn-primary btn-lg" %>
+      <%= link_to "Cancel", hours_events_path, class: "btn btn-danger btn-lg" %>
+    </div>
+</div>
 <% end %>
