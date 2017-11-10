@@ -24,3 +24,11 @@
 /public/packs
 /public/packs-test
 /node_modules
+
+# Ignore broken migration files
+/db/migrate/20171106214656_remove_user_id_from_hours_logs.rb
+/db/migrate/20171106214904_remove_index_user_id_from_hours_logs.rb
+/db/migrate/20171106215047_remove_user_id_from_sick_hours_logs.rb
+/db/migrate/20171106215110_remove_index_user_id_from_sick_hours_logs.rb
+/db/migrate/20171106215642_remove_user_id_from_vacation_hours_logs.rb
+/db/migrate/20171106232931_drop_first_thought_tables.rb
