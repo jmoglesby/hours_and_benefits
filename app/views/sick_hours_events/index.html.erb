@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="btn-group float-right">
-    <%= link_to 'New Hours Event', new_sick_hours_event_path, class: "btn btn-primary btn-lg" %>
-    <%= link_to 'Manually Add Hours', sick_hours_events_gain_path, class: "btn btn-warning btn-lg" %>
+    <%= link_to 'Use', new_sick_hours_event_path, class: "btn btn-primary btn-sm" %>
+    <%= link_to 'Gain', sick_hours_events_gain_path, class: "btn btn-warning btn-sm" %>
   </div>
   <h1>Sick Time</h1>
 </div>
@@ -9,10 +9,10 @@
 <div class="container-fluid">
   <table class="table table-striped">
     <thead>
-      <tr class="h2">
+      <tr class="h5">
         <th>Date</th>
-        <th>Hours Used</th>
-        <th>Hours Gained</th>
+        <th>Used</th>
+        <th>Gained</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -20,14 +20,13 @@
     <tbody>
       <% @sick_hours_events.order(sick_hours_adj_date: :desc).each do |sick_hours_event| %>
         <tr>
-          <td class="h4"><%= sick_hours_event.sick_hours_adj_date.strftime("%m/%d/%Y") %></td>
-          <td class="h4"><%= sick_hours_event.sick_hours_used %></td>
-          <td class="h4"><%= sick_hours_event.sick_hours_gained %></td>
+          <td><%= sick_hours_event.sick_hours_adj_date.strftime("%m/%d/%Y") %></td>
+          <td><%= sick_hours_event.sick_hours_used %></td>
+          <td><%= sick_hours_event.sick_hours_gained %></td>
           <td>
-            <%= link_to 'Edit', edit_sick_hours_event_path(sick_hours_event), class: "btn btn-success btn-lg" %>
             <%= link_to 'Delete', sick_hours_event,
                 method: :delete, data: { confirm: 'Are you sure?' },
-                class: "btn btn-danger btn-lg" %>
+                class: "btn btn-danger btn-sm" %>
           </td>
         </tr>
       <% end %>
