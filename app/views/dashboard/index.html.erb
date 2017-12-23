@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger float-right" %>
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger float-right", style: "color:white" %>
   <h1 class="h1">
     Hours & Benefits
   </h1>
@@ -13,7 +13,7 @@
     <div class="col-md-4">
       <div class="card text-center mb-4">
         <h2 class="card-header">
-          <%= link_to "Hours Worked", hours_events_path %>
+          <%= link_to "Hours Worked", hours_events_path, class: "btn btn-block btn-light btn-lg font-weight-bold", style: "color:dark gray" %>
         </h2>
         <div class="card-body text-left">
           <p class="h3 mb-2">
@@ -30,14 +30,14 @@
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Add Hours", new_hours_event_path, class: "btn btn-primary" %>
+          <%= link_to "Add Hours", new_hours_event_path, class: "btn btn-primary", style: "color:white" %>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card text-center mb-4">
         <h2 class="card-header">
-          <%= link_to "Sick Hours", sick_hours_events_path %>
+          <%= link_to "Sick Hours", sick_hours_events_path, class: "btn btn-block btn-light btn-lg font-weight-bold", style: "color:dark gray" %>
         </h2>
         <div class="card-body text-left">
           <p class="h3 mb-2">
@@ -54,15 +54,15 @@
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use Hours", new_sick_hours_event_path, class: "btn btn-primary" %>
-          <%= link_to "Gain Hours", sick_hours_events_gain_path, class: "btn btn-warning" %>
+          <%= link_to "Use Hours", new_sick_hours_event_path, class: "btn btn-primary", style: "color:white" %>
+          <%= link_to "Gain Hours", sick_hours_events_gain_path, class: "btn btn-warning", style: "color:gray" %>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card text-center">
         <h2 class="card-header">
-          <%= link_to "Vacation Hours", vacation_hours_events_path %>
+          <%= link_to "Vacation Hours", vacation_hours_events_path, class: "btn btn-block btn-light btn-lg font-weight-bold", style: "color:dark gray" %>
         </h2>
         <div class="card-body text-left">
           <p class="h3 mb-2">
@@ -79,8 +79,8 @@
           </p>
         </div>
         <div class="card-footer">
-          <%= link_to "Use Hours", new_vacation_hours_event_path, class: "btn btn-primary" %>
-          <%= link_to "Gain Hours", vacation_hours_events_gain_path, class: "btn btn-warning" %>
+          <%= link_to "Use Hours", new_vacation_hours_event_path, class: "btn btn-primary", style: "color:white" %>
+          <%= link_to "Gain Hours", vacation_hours_events_gain_path, class: "btn btn-warning", style: "color:gray" %>
         </div>
       </div>
     </div>
