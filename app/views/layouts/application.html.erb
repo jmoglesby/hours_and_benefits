@@ -12,7 +12,7 @@
 
   </head>
 
-  <body>
+  <body class="mb-5">
     <% if notice.present? %>
       <aside class="alert alert-info">
         <%= notice %>
@@ -27,6 +27,9 @@
   </body>
 
 
-  <footer class="container-fluid">
+  <footer class="container-fluid my-5">
+    <p class="font-italic">
+      <%= current_user.email %>
+    </p>
   </footer>
 </html>
